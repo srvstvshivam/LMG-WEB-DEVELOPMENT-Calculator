@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+	background-image:url("Background image.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;	
+}
+</style>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+    	<div class="calculator">
+    	     <input type="text" placeholder="0" id="out">
+	     <button onClick="Clear()">AC</button>
+	     <button onClick="del()">Del</button>
+	     <button onClick="display('%')">%</button>
+         <button onClick="display('/')">/</button>
+         <button onClick="display('7')">7</button>
+         <button onClick="display('8')">8</button>
+         <button onClick="display('9')">9</button>
+         <button onClick="display('*')">*</button>
+	     <button onClick="display('4')">4</button>
+	     <button onClick="display('5')">5</button>
+	     <button onClick="display('6')">6</button>
+	     <button onClick="display('-')">-</button>
+	     <button onClick="display('1')">1</button>
+	     <button onClick="display('2')">2</button>
+	     <button onClick="display('3')">3</button>
+	     <button onClick="display('+')">+</button>
+	     <button onClick="display('.')">.</button>
+	     <button onClick="display('0')">0</button>
+	     <button onClick="Calculator()" class="equal">=</button>			
+    	</div>
+    </div>
+    <footer class="footer">
+        <div class="footerContainer">
+            <p class="copyright">Copyright © 2022 <a href="https://github.com/shivam28072001" target="_blank">
+                    Shivam Srivastava.</a> All Right Reserved</p>
+        </div>
+    </footer>
+</body>
+<script>
+    let output = document.getElementById("out");
+    function display(num)
+    {
+        output.value+=num;
+    }
+    function Calculator()
+    {
+        try{
+            output.value=eval(output.value);
+        }
+        catch(err){
+            alert("Invalid");
+        }
+    }
+    function Clear()
+    {
+        output.value="";
+    }
+    function del()
+    {
+        output.value=output.value.slice(0,-1);
+    }
+ src = "js.js"
+</script>    
+</html>
